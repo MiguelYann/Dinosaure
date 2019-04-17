@@ -1,0 +1,35 @@
+<div class="button-row">
+    <a mat-raised-button color="primary" (click)="DinosaureDetails()">
+        <mat-icon>show</mat-icon>
+    </a>
+</div>
+<form [formGroup]="DinosForm" (ngSubmit)="onFormSubmit(DinosForm.value)">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="age" formControlName="age">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('age').valid && DinosForm.get('age').touched">Age</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entrer la famille du dinosaure" formControlName="title">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('title').valid && DinosForm.get('title').touched">Famille</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="race" formControlName="race">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('race').valid && DinosForm.get('race').touched">Race</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+        <mat-error>
+            <span *ngIf="!DinosForm.get('description').valid && DinosForm.get('description').touched">Nourriture</span>
+        </mat-error>
+    </mat-form-field>
+
+    <div class="button-row">
+        <button type="submit" [disabled]="!DinosForm.valid" mat-raised-button color="primary"><mat-icon>Ajouter</mat-icon></button>
+    </div>
+</form>
