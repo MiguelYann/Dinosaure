@@ -1,0 +1,33 @@
+<div class="button-row">
+    <a mat-raised-button color="primary" [routerLink]="['/dinosaures-create']">
+        <h1>Carnet DINOSAURES</h1>
+    </a>
+</div>
+<div class="example-container mat-elevation-z8">
+    <table mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Title Column -->
+        <ng-container matColumnDef="it">
+            <th mat-header-cell *matHeaderCellDef> Age </th>
+            <td mat-cell *matCellDef="let element" class="isbn-col"> {{element.age}} </td>
+        </ng-container>
+
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Famille </th>
+            <td mat-cell *matCellDef="let element"> {{element.famille}} </td>
+        </ng-container>
+
+        <!-- Author Column -->
+        <ng-container matColumnDef="race">
+            <th mat-header-cell *matHeaderCellDef> Race </th>
+            <td mat-cell *matCellDef="let element"> {{element.Race}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/dinosaures-details/', row._id]"></tr>
+    </table>
+</div>
