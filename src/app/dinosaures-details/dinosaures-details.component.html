@@ -1,0 +1,34 @@
+<div class="button-row">
+    <a mat-raised-button color="primary" [routerLink]="['/dinosaures']">
+        <mat-icon>list</mat-icon>
+    </a>
+</div>
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>
+            <h2>{{dinosaures.famille}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>{{dinosaures.Race}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <dl>
+            <dt>Age</dt>
+            <dd>{{dinosaures.age}}</dd>
+            <dt>Famille:</dt>
+            <dd>{{dinosaures.famille}}</dd>
+            <dt>Race:</dt>
+            <dd>{{dinosaures.Race}}</dd>
+            <dt>Nourriture:</dt>
+            <dd>{{dinosaures.nourriture}}</dd>
+
+        </dl>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink]="['/dinosaures-edit', dinosaures._id]">
+            <mat-icon>Modifier</mat-icon>
+        </a>
+        <a mat-raised-button color="warn" (click)="deleteDinosaure(dinosaures._id)">
+            <mat-icon>Supprimer</mat-icon>
+        </a>
+    </mat-card-actions>
+</mat-card>
