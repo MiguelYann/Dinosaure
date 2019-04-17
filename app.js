@@ -9,7 +9,7 @@ var apiRouter = require('./routes/dinosaures');
 var app = express();
 
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost:27017/MeanDinosaure', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/MeanDinosaure', { useNewUrlParser: true })
     .then(() => console.log('connection successful'))
     .catch((err) => console.error(err));
 
