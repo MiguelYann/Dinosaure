@@ -1,0 +1,35 @@
+<div class="button-row">
+    <a mat-raised-button color="primary" [routerLink]="['/dinosaures']">
+        <h1>Carnet Dinosaure</h1>
+    </a>
+</div>
+<form [formGroup]="DinosForm" (ngSubmit)="onFormSubmit(DinosForm.value)">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entrer l'age du dinosaure" formControlName="isbn">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('age').valid && DinosForm.get('age').touched">Entrer l'age du dinosaure</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entrer la famille du dinosaure" formControlName="title">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('famille').valid && DinosForm.get('famille').touched">Entrer la famille du dinosaure</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entrer la race du dinosaure" formControlName="author">
+        <mat-error>
+            <span *ngIf="!DinosForm.get('Race').valid && DinosForm.get('Race').touched">Entrer la race du dinosaure</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Entrer la nourriture du dinosaure" formControlName="description"></textarea>
+        <mat-error>
+            <span *ngIf="!DinosForm.get('nourriture').valid && DinosForm.get('nourriture').touched">Entrer la nourriture du dinosaure</span>
+        </mat-error>
+    </mat-form-field>
+
+    <div class="button-row">
+        <button type="submit" [disabled]="DinosForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+    </div>
+</form>
