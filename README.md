@@ -1,27 +1,35 @@
 # MeanDinosaure
+The goal of this application is to create a mini address book for "Dinosaur" on Express.js (as API) with a reference DB Mongo. The features present for instant are:
+* Add / Remove a "Dinosaur" (already registered) from his friends list.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* View / Edit information (age / family / breed / food)
 
 ## Build
+* install nodeJS
+  
+* install mongoose 
+  ```bash
+  npm install --save mongoose
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* install Angular CLI
+  ```bash
+  sudo npm install -g @angular/cli
 
-## Running unit tests
+* express.js
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install --save express body-parser morgan body-parser serve-favicon http-errors
+  
+```
 
-## Running end-to-end tests
+* Angular Material
+  ```bash
+  ng add @angular/material
+  ```
+## Development server
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng start` for a dev server. Navigate to `http://localhost:3000/`. 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#
